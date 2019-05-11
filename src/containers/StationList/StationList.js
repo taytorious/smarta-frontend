@@ -1,6 +1,6 @@
 import React from "react";
-import Fetcher from "./Fetcher";
-import api from "../api"
+import Fetcher from "../Fetcher/Fetcher";
+import api from "../../api"
 
 const StationList = ({line, direction}) => {
     function renderStationList(data) {

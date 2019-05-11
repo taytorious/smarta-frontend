@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import StationList from "./components/StationList";
+import StationList from "./containers/StationList/StationList";
 
 function App() {
   return (
