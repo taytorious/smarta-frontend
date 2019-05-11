@@ -1,0 +1,191 @@
+{"arrivals":[]}{
+    "arrivals": [
+        {
+            "destination": "Airport",
+            "direction": "N",
+            "event-time": "4/30/2019 11:13:00 AM",
+            "line": "RED",
+            "next-arr": "11:13:21 AM",
+            "station": "BUCKHEAD STATION",
+            "train-id": "403506",
+            "waiting-seconds": "0",
+            "waiting-time": "Arriving"
+        },
+        {
+            "destination": "North Springs",
+            "direction": "N",
+            "event-time": "4/30/2019 11:13:09 AM",
+            "line": "RED",
+            "next-arr": "11:14:34 AM",
+            "station": "OAKLAND CITY STATION",
+            "train-id": "406306",
+            "waiting-seconds": "73",
+            "waiting-time": "Arriving"
+        },
+        {
+            "destination": "North Springs",
+            "direction": "N",
+            "event-time": "4/30/2019 11:13:09 AM",
+            "line": "RED",
+            "next-arr": "11:17:25 AM",
+            "station": "WEST END STATION",
+            "train-id": "406306",
+            "waiting-seconds": "244",
+            "waiting-time": "3 min"
+        },
+        {
+            "destination": "Airport",
+            "direction": "N",
+            "event-time": "4/30/2019 11:13:00 AM",
+            "line": "RED",
+            "next-arr": "11:18:56 AM",
+            "station": "MEDICAL CENTER STATION",
+            "train-id": "403506",
+            "waiting-seconds": "335",
+            "waiting-time": "5 min"
+        },
+        {
+            "destination": "North Springs",
+            "direction": "N",
+            "event-time": "4/30/2019 11:13:09 AM",
+            "line": "RED",
+            "next-arr": "11:20:12 AM",
+            "station": "GARNETT STATION",
+            "train-id": "406306",
+            "waiting-seconds": "411",
+            "waiting-time": "6 min"
+        },
+        {
+            "destination": "Airport",
+            "direction": "N",
+            "event-time": "4/30/2019 11:13:00 AM",
+            "line": "RED",
+            "next-arr": "11:21:03 AM",
+            "station": "DUNWOODY STATION",
+            "train-id": "403506",
+            "waiting-seconds": "462",
+            "waiting-time": "7 min"
+        },
+        {
+            "destination": "North Springs",
+            "direction": "N",
+            "event-time": "4/30/2019 11:13:09 AM",
+            "line": "RED",
+            "next-arr": "11:21:39 AM",
+            "station": "FIVE POINTS STATION",
+            "train-id": "406306",
+            "waiting-seconds": "498",
+            "waiting-time": "7 min"
+        },
+        {
+            "destination": "Airport",
+            "direction": "N",
+            "event-time": "4/30/2019 11:13:00 AM",
+            "line": "RED",
+            "next-arr": "11:22:57 AM",
+            "station": "SANDY SPRINGS STATION",
+            "train-id": "403506",
+            "waiting-seconds": "576",
+            "waiting-time": "9 min"
+        },
+        {
+            "destination": "North Springs",
+            "direction": "N",
+            "event-time": "4/30/2019 11:13:09 AM",
+            "line": "RED",
+            "next-arr": "11:23:28 AM",
+            "station": "PEACHTREE CENTER STATION",
+            "train-id": "406306",
+            "waiting-seconds": "607",
+            "waiting-time": "9 min"
+        },
+        {
+            "destination": "North Springs",
+            "direction": "N",
+            "event-time": "4/30/2019 11:13:09 AM",
+            "line": "RED",
+            "next-arr": "11:25:03 AM",
+            "station": "CIVIC CENTER STATION",
+            "train-id": "406306",
+            "waiting-seconds": "702",
+            "waiting-time": "11 min"
+        },
+        {
+            "destination": "Airport",
+            "direction": "N",
+            "event-time": "4/30/2019 11:13:00 AM",
+            "line": "RED",
+            "next-arr": "11:25:34 AM",
+            "station": "NORTH SPRINGS STATION",
+            "train-id": "403506",
+            "waiting-seconds": "733",
+            "waiting-time": "11 min"
+        },
+        {
+            "destination": "North Springs",
+            "direction": "N",
+            "event-time": "4/30/2019 11:13:09 AM",
+            "line": "RED",
+            "next-arr": "11:26:24 AM",
+            "station": "NORTH AVE STATION",
+            "train-id": "406306",
+            "waiting-seconds": "783",
+            "waiting-time": "12 min"
+        },
+        {
+            "destination": "North Springs",
+            "direction": "N",
+            "event-time": "4/30/2019 11:13:09 AM",
+            "line": "RED",
+            "next-arr": "11:28:01 AM",
+            "station": "MIDTOWN STATION",
+            "train-id": "406306",
+            "waiting-seconds": "880",
+            "waiting-time": "14 min"
+        },
+        {
+            "destination": "North Springs",
+            "direction": "N",
+            "event-time": "4/30/2019 11:13:09 AM",
+            "line": "RED",
+            "next-arr": "11:29:36 AM",
+            "station": "ARTS CENTER STATION",
+            "train-id": "406306",
+            "waiting-seconds": "975",
+            "waiting-time": "15 min"
+        },
+        {
+            "destination": "North Springs",
+            "direction": "N",
+            "event-time": "4/30/2019 11:13:09 AM",
+            "line": "RED",
+            "next-arr": "11:33:08 AM",
+            "station": "LINDBERGH STATION",
+            "train-id": "406306",
+            "waiting-seconds": "1187",
+            "waiting-time": "19 min"
+        },
+        {
+            "destination": "North Springs",
+            "direction": "N",
+            "event-time": "4/30/2019 11:13:09 AM",
+            "line": "RED",
+            "next-arr": "11:36:30 AM",
+            "station": "BUCKHEAD STATION",
+            "train-id": "406306",
+            "waiting-seconds": "1389",
+            "waiting-time": "22 min"
+        },
+        {
+            "destination": "North Springs",
+            "direction": "N",
+            "event-time": "4/30/2019 11:13:09 AM",
+            "line": "RED",
+            "next-arr": "11:42:05 AM",
+            "station": "MEDICAL CENTER STATION",
+            "train-id": "406306",
+            "waiting-seconds": "1724",
+            "waiting-time": "28 min"
+        }
+    ]
+}
