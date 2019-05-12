@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import './global-stytles';
 import StationList from "./containers/StationList/StationList";
 
 function App() {

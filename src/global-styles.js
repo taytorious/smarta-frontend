@@ -1,89 +1,19 @@
-import { injectGlobal, css } from 'styled-components';
-import { normalize } from 'polished';
-import { getAssetURL } from './utils/assetUtils';
+import { injectGlobal } from 'styled-components';
 
 
 export const MAX_WIDTH = 600;
 
-const fontsUrlBase = getAssetURL('exp-fonts');
-const getFontResources = (font) => css`
-    src: url('${fontsUrlBase}/${font}.woff2') format('woff2'),
-        url('${fontsUrlBase}/${font}.woff') format('woff'),
-        url('${fontsUrlBase}/${font}.ttf') format('opentype'),
-        url('${fontsUrlBase}/${font}.eot') format('eot');
-`;
 
-const loadProximaNova = () => css`
-    @font-face {
-        font-weight: 100;
-        font-family: 'Proxima Nova';
-        ${getFontResources('ProximaNova-Regular')};
-        font-style: regular;
-    }
-
-    @font-face {
-        font-weight: 400;
-        font-family: 'Proxima Nova';
-        ${getFontResources('ProximaNova-Regular')};
-        font-style: regular;
-    }
-
-    @font-face {
-        font-weight: 700;
-        font-family: 'Proxima Nova';
-        ${getFontResources('ProximaNova-Bold')};
-        font-style: regular;
-    }
-
-    @font-face {
-        font-weight: 800;
-        font-family: 'Proxima Nova';
-        ${getFontResources('ProximaNova-Bold')};
-        font-style: regular;
-    }
-`;
-
-const getNonMobileStyles = () => css`
-    :root {
-        --background-color: #dedede;
-
-        @media (min-width: 600px) and (max-height: 1000px) {
-            font-size: 16px;
-            transform: scale(0.9);
-        }
-
-        @media (min-width: 600px) and (max-height: 800px) {
-            font-size: 18px;
-            transform: scale(0.75);
-        }
-
-        @media (min-width: 600px) and (max-height: 700px) {
-            font-size: 18px;
-            transform: scale(0.65);
-        }
-
-        @media (min-width: 600px) and (min-height: 700px) {
-            --max-container-width: 466px;
-        }
-    }
-
-    #app {
-        background: var(--background-color);
-    }
-`;
 
 /* eslint no-unused-expressions: 0 */
 injectGlobal`
-    /* stylelint-disable value-keyword-case, max-empty-lines */
-    ${normalize(true)};
-    ${loadProximaNova()};
-    /* stylelint-enable value-keyword-case, max-empty-lines */
 
     html {
         box-sizing: border-box;
         height: 100%;
         line-height: 1;
         cursor: default;
+        font-size: 16px;
     }
 
     body,
@@ -91,7 +21,7 @@ injectGlobal`
     input,
     textarea,
     select {
-        font-family: 'Proxima Nova', sans-serif;
+        font-family: 'Lato', sans-serif;
     }
 
     html * {
@@ -124,6 +54,32 @@ injectGlobal`
     :before,
     :after {
         box-sizing: content-box;
+    }
+    
+    div {
+        box-sizing: border-box;
+    }
+    
+    :root {
+        --brand-blue: #0092D0;
+        --brand-gold: #FDBE43;
+        --brand-orange: #FF7500;
+        
+        --brand-red: red;
+        --brand-green: green;
+        
+        --brand-darkest-grey: #343537;
+        --brand-darker-grey: #55585D;
+        --brand-dark-grey: #7C8087;
+        --brand-grey: #B4B8BE;
+        --brand-light-grey: #CDD0D4;
+        --brand-lighter-grey: #DDE0E3;
+        --brand-lightest-grey: #F5F5F5;
+        
+        
+        --brand-primary: --brand-blue;
+        --brand-secondary: --brand-gold;
+        --brand-tertiary: --brand-orange;
     }
 
 `;
