@@ -24,7 +24,7 @@ const StationList = (props) => {
         return (
             <Fragment>
                 {data.stations.map((station) => {
-                    return <ListItem key={station["station-name"]}>{station["station-name"]}</ListItem>
+                    return <ListItem key={station["station-name"]}>{station["station-name"].replace(/Station/gi, '')}</ListItem>
                 })}
             </Fragment>
         );
