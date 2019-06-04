@@ -7,10 +7,9 @@ const Fetcher = ({ action, children }) => {
   const [data, loading, error] = useFetcher(action);
  
   if (loading) return <Spinner />;
-  if (error) return <Error error={error} />
+  if (error) return <Error error={error} />;
   if (!data) return null;
 
-  console.log(children);
   return children(data);
 };
 export default Fetcher;

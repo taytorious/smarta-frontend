@@ -1,21 +1,38 @@
-import React from "react";
+import React, { Fragment } from "react";
+import styled from 'styled-components';
 import Fetcher from "../Fetcher/Fetcher";
 import api from "../../api"
+import {brand_lighter_grey} from "../../utils/colors";
 
-const StationList = ({line, direction}) => {
+const ListItem = styled.div`
+  width: 100%;
+  border-bottom: 1px solid ${brand_lighter_grey};
+  font-size: 4vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(12.5vh - 8.75px);
+  cursor: pointer;
+`;
+
+const StationList = (props) => {
+
+    const {
+        fetch
+    } = props;
     function renderStationList(data) {
         
         return (
-            <div className="list">
+            <Fragment>
                 {data.stations.map((station) => {
-                    return <div key={station["station-name"]} className="list__item">{station["station-name"]}</div>
+                    return <ListItem key={station["station-name"]}>{station["station-name"]}</ListItem>
                 })}
-            </div>
+            </Fragment>
         );
     }
     
     return (
-        <Fetcher action={api.fetchStationsByLocation(line, direction)}>
+        <Fetcher action={fetch}>
             
                 {data => renderStationList(data)}
             
