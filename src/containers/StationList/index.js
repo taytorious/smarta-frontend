@@ -1,7 +1,6 @@
 import React, { Fragment } from "react";
 import styled from 'styled-components';
-import Fetcher from "../Fetcher/Fetcher";
-import api from "../../api"
+import Fetcher from "../../components/Fetcher";
 import {brand_lighter_grey} from "../../utils/colors";
 
 const ListItem = styled.div`

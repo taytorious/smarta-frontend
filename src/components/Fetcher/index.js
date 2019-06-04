@@ -1,6 +1,6 @@
 import React from 'react';
-import Spinner from '../../components/Spinner/Spinner'; // not provided in this post
-import Error from '../../components/Error/Error'; // not provided in this post
+import Spinner from '../Spinner'; // not provided in this post
+import Error from '../Error'; // not provided in this post
 import {useFetcher} from '../../hooks';
 
 const Fetcher = ({ action, children }) => {
