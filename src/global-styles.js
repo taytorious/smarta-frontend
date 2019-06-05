@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import {brand_darkest_grey} from "./utils/colors";
 
 
 export const MAX_WIDTH = 600;
@@ -60,6 +61,16 @@ const Global = createGlobalStyle`
     
     div {
         box-sizing: border-box;
+    }
+    
+    a {
+      color: ${brand_darkest_grey};
+      text-decoration: none;
+      
+      &:hover, &:visited {
+        color: ${brand_darkest_grey};
+        text-decoration: none;
+      }
     }
    
 

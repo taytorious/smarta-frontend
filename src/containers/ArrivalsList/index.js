@@ -3,11 +3,8 @@ import styled from 'styled-components';
 import Fetcher from "../../components/Fetcher";
 import {brand_lighter_grey} from "../../utils/colors";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import api from '../../api';
 
-
-const List = styled.div`
-  padding: 0 25px;
-`;
 
 const ListItem = styled.div`
   width: 100%;
@@ -20,35 +17,31 @@ const ListItem = styled.div`
   cursor: pointer;
 `;
 
-const StationList = (props) => {
+const ArrivalList = (props) => {
 
     const {
         fetch
     } = props;
-    function renderStationList(data) {
-        
+    function renderArrivalList(data) {
+
         return (
-            <List>
+            <Fragment>
                 {data.stations.map((station) => {
-                    let key = station["station-name"].replace(' ', "-");
-                    console.log(station);
                     return (
-                        <Link key={key} to={`/stations/${key}`} >
-                            <ListItem>{station["station-name"].replace(/Station/gi, '')}</ListItem>
-                        </Link>
+                        <ListItem key={station["station-name"]}>{station["station-name"].replace(/Station/gi, '')}</ListItem>
                     );
                 })}
-            </List>
+            </Fragment>
         );
     }
-    
+
     return (
-        <Fetcher action={fetch}>
-            
-                {data => renderStationList(data)}
-            
+        <Fetcher action={api.fetchArrivalsByLineAndStation}>
+
+            {data => renderArrivalList(data)}
+
         </Fetcher>
     );
 }
 
-export default StationList;
+export default ArrivalList;

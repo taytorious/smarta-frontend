@@ -5,14 +5,16 @@ import { FaFilter, FaChevronLeft } from 'react-icons/fa';
 import { brand_blue, brand_orange, brand_red } from "../../utils/colors";
 
 const HeaderContainer = styled.div`
-  position: relative;
+  position: fixed;
   width: 100%;
   height: 70px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #FFF;
+  background: rgba(0,146,208, 0.2);
+  background: linear-gradient(90deg, rgba(0,146,208,1) 0%, rgba(253,190,67,1) 35%, rgba(255,117,0,1) 100%);
   border-bottom: 1px solid ${brand_blue};
+  z-index: 100;
 `;
 
 const Button = styled.div`
@@ -28,18 +30,22 @@ const Button = styled.div`
 
 const BackButton = styled(Button)`
   left: 20px;
+  display: none;
 `;
 
 const Logo = styled.div`
-  height: 90%;
+  height: 80%;
+  max-width: calc(100% - 80px);
 `;
 
 const Image = styled.img`
   max-height: 100%;
-`
+  max-width: 100%;
+`;
 
 const FilterButton = styled(Button)`
   right: 20px;
+  display: none;
 `;
 
 const Header = (props) => {
