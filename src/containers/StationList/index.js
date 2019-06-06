@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import styled from 'styled-components';
 import Fetcher from "../../components/Fetcher";
 import {brand_lighter_grey} from "../../utils/colors";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Link } from "react-router-dom";
 
 
 const List = styled.div`
@@ -30,10 +30,10 @@ const StationList = (props) => {
         return (
             <List>
                 {data.stations.map((station) => {
-                    let key = station["station-name"].replace(' ', "-");
-                    console.log(station);
+                    const name = station["station-name"];
+                    const key = name.replace(' ', "-");
                     return (
-                        <Link key={key} to={`/stations/${key}`} >
+                        <Link key={key} to={{pathname: `/stations/${key}`, state: { station: name }}}>
                             <ListItem>{station["station-name"].replace(/Station/gi, '')}</ListItem>
                         </Link>
                     );

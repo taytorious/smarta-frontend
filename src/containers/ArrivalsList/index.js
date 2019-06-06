@@ -2,7 +2,6 @@ import React, { Fragment } from "react";
 import styled from 'styled-components';
 import Fetcher from "../../components/Fetcher";
 import {brand_lighter_grey} from "../../utils/colors";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import api from '../../api';
 import ArrivalListItem from '../../components/ArrivalListItem'
 
@@ -10,9 +9,9 @@ import ArrivalListItem from '../../components/ArrivalListItem'
 const ArrivalList = (props) => {
 
     const {
-        station,
-        direction
+        location
     } = props;
+    const {station, direction} = location.state;
     function renderArrivalList(data) {
 
         return (
