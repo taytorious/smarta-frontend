@@ -1,9 +1,11 @@
 import {getScheduleType} from "./utils";
 import Stations from './constants/stations';
 
+const BASE_URL = process.env.REACT_APP_BASE_URL;
+
 const fetchScheduleByStationAndDay = (station, day) => async () => {
     
-    const response = await fetch(`localhost:3000/api/static/schedule/station?schedule=${day}&station=${station}`, {mode: 'cors'});
+    const response = await fetch(`${BASE_URL}/api/static/schedule/station?schedule=${day}&station=${station}`, {mode: 'cors'});
     const jsonData = response.json();
     if (!response.ok) {
         throw new Error(jsonData, response.statusCode);
@@ -14,7 +16,7 @@ const fetchScheduleByStationAndDay = (station, day) => async () => {
 
 const fetchArrivalsByLineAndStation = (line, station) => async () => {
     
-    const response = await fetch(`localhost:3000/api/live/schedule/line?line=${line}`, {mode: 'cors'});
+    const response = await fetch(`${BASE_URL}/api/live/schedule/line?line=${line}`, {mode: 'cors'});
     let jsonData = response.json();
     if (!response.ok) {
         throw new Error(jsonData, response.statusCode);
@@ -28,8 +30,7 @@ const fetchArrivalsByLineAndStation = (line, station) => async () => {
 }
 
 const fetchlines = async () => {
-    
-    const response = await fetch(`localhost:3000/api/static/lines`, {mode: 'cors'});
+    const response = await fetch(`${BASE_URL}/api/static/lines`, {mode: 'cors'});
     const jsonData = response.json();
 
     if (!response.ok) {
@@ -41,7 +42,7 @@ const fetchlines = async () => {
 
 const fetchDirections = async () => {
     
-    const response = await fetch(`localhost:3000/api/static/directions`, {mode: 'cors'});
+    const response = await fetch(`${BASE_URL}/api/static/directions`, {mode: 'cors'});
     const jsonData = response.json();
 
     if (!response.ok) {
@@ -52,9 +53,8 @@ const fetchDirections = async () => {
 }
 
 const fetchStationsByLineAndDirection = (line, direction) => async () => {
-
     const schedule = getScheduleType(new Date());
-    const response = await fetch(`http://localhost:3000/api/static/stations?line=${line}&direction=${direction}&schedule=${schedule}`, {mode: 'cors'});
+    const response = await fetch(`${BASE_URL}/api/static/stations?line=${line}&direction=${direction}&schedule=${schedule}`, {mode: 'cors'});
     const jsonData = response.json();
 
     if (!response.ok) {
@@ -65,7 +65,6 @@ const fetchStationsByLineAndDirection = (line, direction) => async () => {
 };
 
 const fetchStationsByLocation = () => async () => {
-    
      const location = new Promise((resolve, reject) => {
         if ("geolocation" in navigator) {
             navigator.geolocation.getCurrentPosition(function(position) {
@@ -75,9 +74,8 @@ const fetchStationsByLocation = () => async () => {
             throw new Error("geolocation srvices are disabled");
         }
     });
-    
     const position = await location;
-    const response = await fetch(`http://localhost:3000/api/static/stations/location?latitude=${position.latitude}&longitude=${position.longitude}`, {mode: 'cors'});
+    const response = await fetch(`${BASE_URL}/api/static/stations/location?latitude=${position.latitude}&longitude=${position.longitude}`, {mode: 'cors'});
     const jsonData = response.json();
 
     if (!response.ok) {
