@@ -27,8 +27,6 @@ const ReloadButton = styled.button`
   justify-content: center;
 `;
 
-
-
 const Error = ({error}) => {
 
     return (

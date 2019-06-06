@@ -1,4 +1,5 @@
 import {getScheduleType} from "./utils";
+import Stations from './constants/stations';
 
 const fetchScheduleByStationAndDay = (station, day) => async () => {
     
@@ -84,7 +85,22 @@ const fetchStationsByLocation = () => async () => {
         // this is a custom exception class that stores JSON data
     }
     return jsonData;
-}
+};
+
+const fetchArrivalsByStationAndDirection = (station, direction) => async () => {
+    const lines = Stations[station].directions[direction];
+    let response = {};
+    for(const line of lines) {
+        const newArrivals = await fetchArrivalsByLineAndStation(line, station);
+        response = {...response, ...newArrivals }
+    }
+    let jsonData = response.json();
+
+    jsonData = jsonData.filter((arrival) => {
+        return arrival.direction === direction;
+    });
+    return jsonData;
+};
 
 export default {
     fetchStationsByLineAndDirection,
@@ -92,7 +108,8 @@ export default {
     fetchDirections,
     fetchlines,
     fetchScheduleByStationAndDay,
-    fetchStationsByLocation
+    fetchStationsByLocation,
+    fetchArrivalsByStationAndDirection
 };
 
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from "styled-components";
 
 const Arrival = styled.div`
@@ -29,7 +29,7 @@ const ETA = styled.div`
 
 const ETAMinLabel = styled.div`
     font-size: 12px;
-    font-weight: 600px;
+    font-weight: 600;
 `;
 
 const ArrivalHead = styled.div`
@@ -42,7 +42,6 @@ const Line = styled.h2`
     font-size: 18px;
     width: 100%;
     margin-bottom: 7px;
-    width: 100%;
 `;
 
 const Direction = styled.div`
@@ -63,15 +62,27 @@ const DetailItem = styled.div`
     
 `;
 
-const ArrivalListItem = ({line, direction, ETA, scheduled, actual, timeToDestionation isSelected}) => {
+const ArrivalListItem = (props) => {
+    const {
+        line,
+        direction,
+        ETA,
+        scheduled,
+        actual,
+        timeToDestination
+    } = props;
+
+    const [isSelected, setIsSelected] = useState(false);
+
+    const handleClick = (e) => {
+        e.preventDefault();
+        setIsSelected(! isSelected);
+    };
 
     return (
-
-        <Arrival>
+        <Arrival onClick={handleClick}>
             <ETA>
-                <div>
-                    {ETA}
-                </div>
+                <div>{ETA}</div>
                 <ETAMinLabel>min</ETAMinLabel>
             </ETA>
             <ArrivalHead>

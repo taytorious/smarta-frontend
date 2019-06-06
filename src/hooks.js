@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 export function useFetcher(action) {
   const [loading, setLoading] = useState(false);
@@ -22,4 +22,12 @@ export function useFetcher(action) {
     loadData();
   }, [action]);
   return [data, loading, error];
+}
+
+export function usePrevious(value) {
+    const ref = useRef();
+    useEffect(() => {
+        ref.current = value;
+    });
+    return ref.current;
 }

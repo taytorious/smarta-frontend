@@ -4,31 +4,29 @@ import Fetcher from "../../components/Fetcher";
 import {brand_lighter_grey} from "../../utils/colors";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import api from '../../api';
+import ArrivalListItem from '../../components/ArrivalListItem'
 
-
-const ListItem = styled.div`
-  width: 100%;
-  border-bottom: 1px solid ${brand_lighter_grey};
-  font-size: 4vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: calc(12.5vh - 8.75px);
-  cursor: pointer;
-`;
 
 const ArrivalList = (props) => {
 
     const {
-        fetch
+        station,
+        direction
     } = props;
     function renderArrivalList(data) {
 
         return (
             <Fragment>
-                {data.stations.map((station) => {
+                {data.arrivals.map((arrival) => {
                     return (
-                        <ListItem key={station["station-name"]}>{station["station-name"].replace(/Station/gi, '')}</ListItem>
+                        <ArrivalListItem
+                            line={arrival.line}
+                            direction={arrival.direction}
+                            ETA={"8"}
+                            scheduled={"7:39 PM"}
+                            actual={"7:42 PM"}
+                            timeToDestination={"16"}
+                        />
                     );
                 })}
             </Fragment>
@@ -36,12 +34,12 @@ const ArrivalList = (props) => {
     }
 
     return (
-        <Fetcher action={api.fetchArrivalsByLineAndStation}>
+        <Fetcher action={api.fetchArrivalsByStationAndDirection(station, direction)}>
 
             {data => renderArrivalList(data)}
 
         </Fetcher>
     );
-}
+};
 
 export default ArrivalList;

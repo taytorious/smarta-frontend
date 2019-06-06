@@ -1,8 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
+import {withRouter} from 'react-router-dom';
 import { IconContext } from 'react-icons';
 import { FaFilter, FaChevronLeft } from 'react-icons/fa';
 import { brand_blue, brand_orange, brand_red } from "../../utils/colors";
+import { usePrevious } from '../../hooks';
 
 const HeaderContainer = styled.div`
   position: fixed;
@@ -50,16 +52,17 @@ const FilterButton = styled(Button)`
 
 const Header = (props) => {
     const {
-        isLanding
+        location
     } = props;
-
+    const previousLocation = usePrevious(location);
+    const showBackButton = location.pathname !== '/';
     return (
       <HeaderContainer>
-          <BackButton>
+          {showBackButton && <BackButton onClick={(e) => window.location.assign(previousLocation.pathname)}>
               <IconContext.Provider value={{ color: brand_orange}}>
                 <FaChevronLeft />
               </IconContext.Provider>
-          </BackButton>
+          </BackButton>}
           <Logo>
               <Image src="/img/smarta-logo.png" fit="contain"/>
           </Logo>
@@ -72,4 +75,6 @@ const Header = (props) => {
     );
 };
 
-    export default Header;
+const HeaderWithRouter = withRouter(Header);
+
+export default HeaderWithRouter;
