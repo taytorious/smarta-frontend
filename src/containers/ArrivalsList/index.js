@@ -9,11 +9,12 @@ import ArrivalListItem from '../../components/ArrivalListItem'
 const ArrivalList = (props) => {
 
     const {
-        match
+        match,
+        station
     } = props;
-    const {station, direction} = match.params;
+    const {direction} = match.params;
+    console.log(match);
     function renderArrivalList(data) {
-
         return (
             <Fragment>
                 {data.arrivals.map((arrival) => {

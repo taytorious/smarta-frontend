@@ -22,9 +22,6 @@ function App() {
                       <Route
                           path="/:station"
                           component={DirectionSelector} />
-                      <Route
-                          path="/:station/:direction"
-                          component={ArrivalList} />
                       <Route component={StationList} />
                   </Switch>
               </ContentWell>

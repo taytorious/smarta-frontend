@@ -3,6 +3,7 @@ import { Link, Route } from "react-router-dom";
 import styled from "styled-components";
 import {brand_lighter_grey, brand_red} from "../../utils/colors";
 import Stations from '../../constants/stations';
+import ArrivalList from "../../containers/ArrivalsList";
 
 const DirectionContainer = styled.div`
   display: flex;
@@ -28,19 +29,22 @@ const DirectionSelector = (props) => {
     const {
         match
     } = props;
-    const {station} = match.params;
-    const key = station.replace(/Station/gi, '').trim().replace('-', "");
-    console.log(key);
-    const directions = Stations[key].directions;
+    let {station} = match.params;
+    const stationKey = station.replace(/Station/gi, '').trim().replace('-', "");
+    const directions = Stations[stationKey].directions;
     return (
         <Fragment>
             <DirectionContainer>
-                {Object.keys(directions).map((key, index) => (
-                    <Direction key={key} to={{pathname:`${match.url}/${key}`, state: {station: station, direction: key}}}>
-                        {key}
+                {Object.keys(directions).map((direction, index) => (
+                    <Direction key={direction} to={`${match.url}/${direction}`}>
+                        {direction}
                     </Direction>
                 ))}
             </DirectionContainer>
+            <Route
+                path={`${match.url}/:direction`}
+                station={station.replace('-', ' ')}
+                component={ArrivalList} />
         </Fragment>
 
         );
