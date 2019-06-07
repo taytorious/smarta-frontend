@@ -13,7 +13,6 @@ const ArrivalList = (props) => {
         station
     } = props;
     const {direction} = match.params;
-    console.log(match);
     function renderArrivalList(data) {
         return (
             <Fragment>

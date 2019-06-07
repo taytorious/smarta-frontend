@@ -1,7 +1,7 @@
 import React, { useState, Fragment } from 'react';
 import { Link, Route } from "react-router-dom";
 import styled from "styled-components";
-import {brand_lighter_grey, brand_red} from "../../utils/colors";
+import {brand_red} from "../../utils/colors";
 import Stations from '../../constants/stations';
 import ArrivalList from "../../containers/ArrivalsList";
 
@@ -32,22 +32,23 @@ const DirectionSelector = (props) => {
     let {station} = match.params;
     const stationKey = station.replace(/Station/gi, '').trim().replace('-', "");
     const directions = Stations[stationKey].directions;
+
+    const [shouldShowPicker, setShouldShowPicker] = useState(true)
+
     return (
         <Fragment>
-            <DirectionContainer>
+            {shouldShowPicker && <DirectionContainer>
                 {Object.keys(directions).map((direction, index) => (
                     <Direction key={direction} to={`${match.url}/${direction}`}>
                         {direction}
                     </Direction>
                 ))}
-            </DirectionContainer>
+            </DirectionContainer>}
             <Route
                 path={`${match.url}/:direction`}
-                station={station.replace('-', ' ')}
-                component={ArrivalList} />
+                render={(props) => { setShouldShowPicker(false); return <ArrivalList  {...props} station={stationKey} />}} />
         </Fragment>
-
-        );
+    );
 };
 
 

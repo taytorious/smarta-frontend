@@ -33,7 +33,7 @@ const Error = ({error}) => {
         <Fragment>
             <BG/>
             <Apology>Oops, Our Bad</Apology>
-            <ErrorLabel>{error.message}</ErrorLabel>
+            <ErrorLabel>{error && error.message}</ErrorLabel>
             <ReloadButton onClick={(e) => window.location.reload()}>
                 <IconContext.Provider value={{ color: brand_blue, size: '7vh'}}>
                     <FaRedo />

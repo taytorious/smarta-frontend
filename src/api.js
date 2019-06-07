@@ -15,18 +15,22 @@ const fetchScheduleByStationAndDay = (station, day) => async () => {
 }
 
 const fetchArrivalsByLineAndStation = (line, station) => async () => {
-    
-    const response = await fetch(`${BASE_URL}/api/live/schedule/line?line=${line}`, {mode: 'cors'});
+    console.log(line, station, 'second')
+    const response = await fetch(`http://smarta-api.herokuapp.com/api/live/schedule/line?line=${line}`, {mode: 'cors'});
     let jsonData = response.json();
-    if (!response.ok) {
-        throw new Error(jsonData, response.statusCode);
-        // this is a custom exception class that stores JSON data
-    }
+    const ArrivalPromise = new Promise((resolve, reject) => {
+        if (!response.ok) {
+            reject(jsonData, response);
+            throw new Error(jsonData, response.statusCode);
+        }
 
-    jsonData = jsonData.filter((arrival) => {
+        jsonData = jsonData.filter((arrival) => {
             return arrival.station === station.toUpperCase();
-    })
-    return jsonData;
+        })
+        resolve(jsonData)
+    });
+
+    return ArrivalPromise;
 }
 
 const fetchlines = async () => {
@@ -87,16 +91,24 @@ const fetchStationsByLocation = () => async () => {
 
 const fetchArrivalsByStationAndDirection = (station, direction) => async () => {
     const lines = Stations[station].directions[direction];
+    const stationName = `${station} Station`;
     let response = {};
     for(const line of lines) {
-        const newArrivals = await fetchArrivalsByLineAndStation(line, station);
+        const newArrivals = await fetch(`http://smarta-api.herokuapp.com/api/live/schedule/line/${line}`, {mode: 'no-cors'});
         response = {...response, ...newArrivals }
+    }
+    if (Object.entries(response).length === 0) {
+        throw new Error("No Trains!")
     }
     let jsonData = response.json();
 
-    jsonData = jsonData.filter((arrival) => {
+    if (!response.ok) {
+        throw new Error(jsonData, response.statusCode);
+    }
+
+    /*jsonData = jsonData.filter((arrival) => {
         return arrival.direction === direction;
-    });
+    });*/
     return jsonData;
 };
 
