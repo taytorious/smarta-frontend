@@ -3,9 +3,8 @@ import GlobalStyle from './global-styles';
 import styled from 'styled-components';
 import Header from './components/Header';
 import StationList from "./containers/StationList";
-import DirectionSelector from './components/DirectionSelector';
-import ArrivalList from './containers/ArrivalsList'
-import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
+import Station from './containers/Station';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 const ContentWell = styled.div`
   padding: 71px 0 0;
@@ -21,7 +20,7 @@ function App() {
                   <Switch>
                       <Route
                           path="/:station"
-                          component={DirectionSelector} />
+                          component={Station} />
                       <Route component={StationList} />
                   </Switch>
               </ContentWell>

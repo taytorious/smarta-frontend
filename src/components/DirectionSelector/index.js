@@ -1,9 +1,7 @@
-import React, { useState, useEffect, Fragment } from 'react';
-import { Link, Route } from "react-router-dom";
+import React from 'react';
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import {brand_red} from "../../utils/colors";
-import Stations from '../../constants/stations';
-import ArrivalList from "../../containers/ArrivalsList";
 
 const DirectionContainer = styled.div`
   display: flex;
@@ -27,32 +25,17 @@ const Direction = styled(Link)`
 
 const DirectionSelector = (props) => {
     const {
-        match,
-        history
+        directions,
+        url
     } = props;
-    let {station} = match.params;
-    const stationKey = station.replace(/Station/gi, '').trim().replace('-', "");
-    const directions = Stations[stationKey].directions;
-
-    const [shouldShowPicker, setShouldShowPicker] = useState(true);
-
-    useEffect(() => {
-        setShouldShowPicker(history.action === "POP");
-    });
-
     return (
-        <Fragment>
-            {shouldShowPicker && <DirectionContainer>
+            <DirectionContainer>
                 {Object.keys(directions).map((direction, index) => (
-                    <Direction key={direction} to={`${match.url}/${direction}`}>
+                    <Direction key={direction} to={`${url}/${direction}`}>
                         {direction}
                     </Direction>
                 ))}
-            </DirectionContainer>}
-            <Route
-                path={`${match.url}/:direction`}
-                render={(props) => { setShouldShowPicker(false); return <ArrivalList  {...props} station={stationKey} />}} />
-        </Fragment>
+            </DirectionContainer>
     );
 };
 
