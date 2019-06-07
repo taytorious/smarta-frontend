@@ -1,26 +1,24 @@
 import React, { useState, Fragment } from 'react';
 import { Link, Route } from "react-router-dom";
 import styled from "styled-components";
-import {brand_lighter_grey} from "../../utils/colors";
+import {brand_lighter_grey, brand_red} from "../../utils/colors";
 import Stations from '../../constants/stations';
-import ArrivalList from '../../containers/ArrivalsList';
 
 const DirectionContainer = styled.div`
   display: flex;
   flex-flow: column nowrap;
   font-size: 7vh;
-  padding-top: 70px;
-  min-height: calc(100vh - 70px);
+  height: calc(100vh - 70px);
   
   > div:first-of-type {
     border-top: none;
   }
 `;
 
-const Direction = styled.div`
+const Direction = styled(Link)`
   width: 100%;
   flex: 1 1;
-  border-top: 1px solid ${brand_lighter_grey};
+  border-top: 1px solid ${brand_red};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -28,26 +26,21 @@ const Direction = styled.div`
 
 const DirectionSelector = (props) => {
     const {
-        location,
         match
     } = props;
-    const name = location.state.station;
-    const key = name.replace(/Station/gi, '').replace(' ', "");
+    const {station} = match.params;
+    const key = station.replace(/Station/gi, '').trim().replace('-', "");
     console.log(key);
     const directions = Stations[key].directions;
     return (
         <Fragment>
             <DirectionContainer>
                 {Object.keys(directions).map((key, index) => (
-                    <Link to={{pathname:`${match.url}/${key}`, state: {station: name, direction: key}}}>
-                        <Direction>{key}</Direction>
-                    </Link>
+                    <Direction key={key} to={{pathname:`${match.url}/${key}`, state: {station: station, direction: key}}}>
+                        {key}
+                    </Direction>
                 ))}
             </DirectionContainer>
-            <Route
-                path={`${match.path}/:id`}
-                component={ArrivalList}
-            />
         </Fragment>
 
         );

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Fetcher from "../../components/Fetcher";
 import {brand_lighter_grey} from "../../utils/colors";
 import { Link } from "react-router-dom";
+import api from "../../api";
 
 
 const List = styled.div`
@@ -33,8 +34,8 @@ const StationList = (props) => {
                     const name = station["station-name"];
                     const key = name.replace(' ', "-");
                     return (
-                        <Link key={key} to={{pathname: `/stations/${key}`, state: { station: name }}}>
-                            <ListItem>{station["station-name"].replace(/Station/gi, '')}</ListItem>
+                        <Link key={key} to={`/${key}`}>
+                            <ListItem>{name.replace(/Station/gi, '')}</ListItem>
                         </Link>
                     );
                 })}
@@ -43,7 +44,7 @@ const StationList = (props) => {
     }
     
     return (
-        <Fetcher action={fetch}>
+        <Fetcher action={fetch || api.fetchStationsByLocation()}>
             
                 {data => renderStationList(data)}
             

@@ -9,9 +9,9 @@ import ArrivalListItem from '../../components/ArrivalListItem'
 const ArrivalList = (props) => {
 
     const {
-        location
+        match
     } = props;
-    const {station, direction} = location.state;
+    const {station, direction} = match.params;
     function renderArrivalList(data) {
 
         return (

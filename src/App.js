@@ -5,7 +5,6 @@ import Header from './components/Header';
 import StationList from "./containers/StationList";
 import DirectionSelector from './components/DirectionSelector';
 import ArrivalList from './containers/ArrivalsList'
-import api from './api';
 import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
 
 const ContentWell = styled.div`
@@ -19,10 +18,15 @@ function App() {
               <GlobalStyle/>
               <Header />
               <ContentWell>
-                  <StationList line={"red"} direction={"southbound"} fetch={api.fetchStationsByLocation()}/>
-                  <Route
-                      path="/:id"
-                      component={DirectionSelector} />
+                  <Switch>
+                      <Route
+                          path="/:station"
+                          component={DirectionSelector} />
+                      <Route
+                          path="/:station/:direction"
+                          component={ArrivalList} />
+                      <Route component={StationList} />
+                  </Switch>
               </ContentWell>
         </div>
       </Router>
