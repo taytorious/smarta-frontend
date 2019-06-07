@@ -1,5 +1,6 @@
 import {getScheduleType} from "./utils";
 import Stations from './constants/stations';
+import {capitalizeFirstLetter} from "./utils/utils";
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
@@ -91,10 +92,9 @@ const fetchStationsByLocation = () => async () => {
 
 const fetchArrivalsByStationAndDirection = (station, direction) => async () => {
     const lines = Stations[station].directions[direction];
-    const stationName = `${station} Station`;
     let response = {};
     for(const line of lines) {
-        const newArrivals = await fetch(`http://smarta-api.herokuapp.com/api/live/schedule/line/${line}`, {mode: 'no-cors'});
+        const newArrivals = await fetch(`http://smarta-api.herokuapp.com/api/live/schedule/line/${capitalizeFirstLetter(line)}`, {mode: 'no-cors'});
         response = {...response, ...newArrivals }
     }
     if (Object.entries(response).length === 0) {
