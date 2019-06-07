@@ -1,5 +1,5 @@
 import React, { useState, Fragment } from 'react';
-import { BrowserRouter as Link, Route } from "react-router-dom";
+import { Link, Route } from "react-router-dom";
 import styled from "styled-components";
 import {brand_lighter_grey} from "../../utils/colors";
 import Stations from '../../constants/stations';
@@ -32,7 +32,8 @@ const DirectionSelector = (props) => {
         match
     } = props;
     const name = location.state.station;
-    const key = name.replace(' ', "");
+    const key = name.replace(/Station/gi, '').replace(' ', "");
+    console.log(key);
     const directions = Stations[key].directions;
     return (
         <Fragment>

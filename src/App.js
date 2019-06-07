@@ -20,11 +20,9 @@ function App() {
               <Header />
               <ContentWell>
                   <StationList line={"red"} direction={"southbound"} fetch={api.fetchStationsByLocation()}/>
-                  <Switch>
                   <Route
                       path="/:id"
                       component={DirectionSelector} />
-                  </Switch>
               </ContentWell>
         </div>
       </Router>
