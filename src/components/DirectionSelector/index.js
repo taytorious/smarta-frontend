@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from 'react';
+import React, { useState, useEffect, Fragment } from 'react';
 import { Link, Route } from "react-router-dom";
 import styled from "styled-components";
 import {brand_red} from "../../utils/colors";
@@ -27,13 +27,18 @@ const Direction = styled(Link)`
 
 const DirectionSelector = (props) => {
     const {
-        match
+        match,
+        history
     } = props;
     let {station} = match.params;
     const stationKey = station.replace(/Station/gi, '').trim().replace('-', "");
     const directions = Stations[stationKey].directions;
 
-    const [shouldShowPicker, setShouldShowPicker] = useState(true)
+    const [shouldShowPicker, setShouldShowPicker] = useState(true);
+
+    useEffect(() => {
+        setShouldShowPicker(history.action === "POP");
+    });
 
     return (
         <Fragment>

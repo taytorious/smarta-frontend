@@ -32,7 +32,7 @@ const StationList = (props) => {
             <List>
                 {data.stations.map((station) => {
                     const name = station["station-name"];
-                    const key = name.replace(' ', "-");
+                    const key = name.replace(/Station/gi, '').trim().replace(' ', "-");
                     return (
                         <Link key={key} to={`/${key}`}>
                             <ListItem>{name.replace(/Station/gi, '')}</ListItem>

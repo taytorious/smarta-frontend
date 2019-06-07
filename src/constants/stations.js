@@ -1,7 +1,7 @@
 export default {
     Airport: {
         directions: {
-            northbound: [
+            north: [
                 "red",
                 "gold"
             ]
@@ -9,11 +9,11 @@ export default {
     },
     ArtsCenter: {
         directions: {
-            northbound: [
+            north: [
                 "red",
                 "gold"
             ],
-            southbound: [
+            south: [
                 "red",
                 "gold"
             ]
@@ -21,11 +21,11 @@ export default {
     },
     Ashby: {
         directions: {
-            eastbound: [
+            east: [
                 "blue",
                 "green"
             ],
-            westbound: [
+            west: [
                 "blue",
                 "green"
             ]
@@ -33,58 +33,58 @@ export default {
     },
     Avondale: {
         directions: {
-            eastbound: [
+            east: [
                 "blue"
             ],
-            westbound: [
+            west: [
                 "blue"
             ]
         }
     },
     Bankhead: {
         directions: {
-            eastbound: [
+            east: [
                 "green"
             ]
         }
     },
     Brookhaven: {
         directions: {
-            northbound: [
+            north: [
                 "gold"
             ],
-            southbound: [
+            south: [
                 "gold"
             ]
         }
     },
     Buckhead: {
         directions: {
-            northbound: [
+            north: [
                 "red"
             ],
-            southbound: [
+            south: [
                 "red"
             ]
         }
     },
     Chamblee: {
         directions: {
-            northbound: [
+            north: [
                 "gold"
             ],
-            southbound: [
+            south: [
                 "gold"
             ]
         }
     },
     CivicCenter: {
         directions: {
-            northbound: [
+            north: [
                 "red",
                 "gold"
             ],
-            southbound: [
+            south: [
                 "red",
                 "gold"
             ]
@@ -92,11 +92,11 @@ export default {
     },
     CollegePark: {
         directions: {
-            northbound: [
+            north: [
                 "red",
                 "gold"
             ],
-            southbound: [
+            south: [
                 "red",
                 "gold"
             ]
@@ -104,21 +104,21 @@ export default {
     },
     Decatur: {
         directions: {
-            eastbound: [
+            east: [
                 "blue"
             ],
-            westbound: [
+            west: [
                 "blue"
             ]
         }
     },
     Dome: {
         directions: {
-            eastbound: [
+            east: [
                 "blue",
                 "green"
             ],
-            westbound: [
+            west: [
                 "blue",
                 "green"
             ]
@@ -126,38 +126,38 @@ export default {
     },
     Doraville: {
         directions: {
-            southbound: [
+            south: [
                 "gold"
             ]
         }
     },
     Dunwoody: {
         directions: {
-            northbound: [
+            north: [
                 "red"
             ],
-            southbound: [
+            south: [
                 "red"
             ]
         }
     },
     EastLake: {
         directions: {
-            eastbound: [
+            east: [
                 "blue"
             ],
-            westbound: [
+            west: [
                 "blue"
             ]
         }
     },
     EastPoint: {
         directions: {
-            northbound: [
+            north: [
                 "red",
                 "gold"
             ],
-            southbound: [
+            south: [
                 "red",
                 "gold"
             ]
@@ -165,11 +165,11 @@ export default {
     },
     Edgewood: {
         directions: {
-            eastbound: [
+            east: [
                 "blue",
                 "green"
             ],
-            westbound: [
+            west: [
                 "blue",
                 "green"
             ]
@@ -177,19 +177,19 @@ export default {
     },
     FivePoints: {
         directions: {
-            eastbound: [
+            east: [
                 "blue",
                 "green"
             ],
-            westbound: [
+            west: [
                 "blue",
                 "green"
             ],
-            northbound: [
+            north: [
                 "red",
                 "gold"
             ],
-            southbound: [
+            south: [
                 "red",
                 "gold"
             ]
@@ -197,11 +197,11 @@ export default {
     },
     Garnett: {
         directions: {
-            northbound: [
+            north: [
                 "red",
                 "gold"
             ],
-            southbound: [
+            south: [
                 "red",
                 "gold"
             ]
@@ -209,11 +209,11 @@ export default {
     },
     GeorgiaState: {
         directions: {
-            eastbound: [
+            east: [
                 "blue",
                 "green"
             ],
-            westbound: [
+            west: [
                 "blue",
                 "green"
             ]
@@ -221,25 +221,25 @@ export default {
     },
     HEHolmes: {
         directions: {
-            eastbound: [
+            east: [
                 "blue"
             ]
         }
     },
     IndianCreek: {
         directions: {
-            westbound: [
+            west: [
                 "blue"
             ]
         }
     },
     InmanPark: {
         directions: {
-            eastbound: [
+            east: [
                 "blue",
                 "green"
             ],
-            westbound: [
+            west: [
                 "blue",
                 "green"
             ]
@@ -247,21 +247,21 @@ export default {
     },
     Kensington: {
         directions: {
-            eastbound: [
+            east: [
                 "blue"
             ],
-            westbound: [
+            west: [
                 "blue"
             ]
         }
     },
     KingMemorial: {
         directions: {
-            eastbound: [
+            east: [
                 "blue",
                 "green"
             ],
-            westbound: [
+            west: [
                 "blue",
                 "green"
             ]
@@ -269,11 +269,11 @@ export default {
     },
     Lakewood: {
         directions: {
-            northbound: [
+            north: [
                 "red",
                 "gold"
             ],
-            southbound: [
+            south: [
                 "red",
                 "gold"
             ]
@@ -281,21 +281,21 @@ export default {
     },
     Lenox: {
         directions: {
-            northbound: [
+            north: [
                 "gold"
             ],
-            southbound: [
+            south: [
                 "gold"
             ]
         }
     },
     LindberghCenter: {
         directions: {
-            northbound: [
+            north: [
                 "red",
                 "gold"
             ],
-            southbound: [
+            south: [
                 "red",
                 "gold"
             ]
@@ -303,21 +303,21 @@ export default {
     },
     MedicalCenter: {
         directions: {
-            northbound: [
+            north: [
                 "red"
             ],
-            southbound: [
+            south: [
                 "red"
             ]
         }
     },
     Midtown: {
         directions: {
-            northbound: [
+            north: [
                 "red",
                 "gold"
             ],
-            southbound: [
+            south: [
                 "red",
                 "gold"
             ]
@@ -325,11 +325,11 @@ export default {
     },
     NorthAvenue: {
         directions: {
-            northbound: [
+            north: [
                 "red",
                 "gold"
             ],
-            southbound: [
+            south: [
                 "red",
                 "gold"
             ]
@@ -337,18 +337,18 @@ export default {
     },
     NorthSprings: {
         directions: {
-            southbound: [
+            south: [
                 "red"
             ]
         }
     },
     OaklandCity: {
         directions: {
-            northbound: [
+            north: [
                 "red",
                 "gold"
             ],
-            southbound: [
+            south: [
                 "red",
                 "gold"
             ]
@@ -356,11 +356,11 @@ export default {
     },
     PeachtreeCenter: {
         directions: {
-            northbound: [
+            north: [
                 "red",
                 "gold"
             ],
-            southbound: [
+            south: [
                 "red",
                 "gold"
             ]
@@ -368,21 +368,21 @@ export default {
     },
     SandySprings: {
         directions: {
-            northbound: [
+            north: [
                 "red"
             ],
-            southbound: [
+            south: [
                 "red"
             ]
         }
     },
     VineCity: {
         directions: {
-            eastbound: [
+            east: [
                 "blue",
                 "green"
             ],
-            westbound: [
+            west: [
                 "blue",
                 "green"
             ]
@@ -390,11 +390,11 @@ export default {
     },
     WestEnd: {
         directions: {
-            northbound: [
+            north: [
                 "red",
                 "gold"
             ],
-            southbound: [
+            south: [
                 "red",
                 "gold"
             ]
@@ -402,10 +402,10 @@ export default {
     },
     WestLake: {
         directions: {
-            eastbound: [
+            east: [
                 "blue"
             ],
-            westbound: [
+            west: [
                 "blue"
             ]
         }
