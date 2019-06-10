@@ -21,7 +21,9 @@ function App() {
                       <Route
                           path="/:station"
                           component={Station} />
-                      <Route component={StationList} />
+                      <Route
+                          path="/"
+                          component={StationList} />
                   </Switch>
               </ContentWell>
         </div>

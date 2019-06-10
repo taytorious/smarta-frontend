@@ -1,5 +1,6 @@
 export default {
     Airport: {
+        name: "Airport Station",
         directions: {
             north: [
                 "red",
@@ -8,6 +9,7 @@ export default {
         }
     },
     ArtsCenter: {
+        name: "Arts Center Station",
         directions: {
             north: [
                 "red",
@@ -20,6 +22,7 @@ export default {
         }
     },
     Ashby: {
+        name: "Ashby",
         directions: {
             east: [
                 "blue",
@@ -32,6 +35,7 @@ export default {
         }
     },
     Avondale: {
+        name: "Avondale Station",
         directions: {
             east: [
                 "blue"
@@ -42,6 +46,7 @@ export default {
         }
     },
     Bankhead: {
+        name: "Bankhead Station",
         directions: {
             east: [
                 "green"
@@ -49,6 +54,7 @@ export default {
         }
     },
     Brookhaven: {
+        name: "Brookhaven Station",
         directions: {
             north: [
                 "gold"
@@ -59,6 +65,7 @@ export default {
         }
     },
     Buckhead: {
+        name: "Buckhead Station",
         directions: {
             north: [
                 "red"
@@ -69,6 +76,7 @@ export default {
         }
     },
     Chamblee: {
+        name: "Chamblee Station",
         directions: {
             north: [
                 "gold"
@@ -79,6 +87,7 @@ export default {
         }
     },
     CivicCenter: {
+        name: "Civic Center Station",
         directions: {
             north: [
                 "red",
@@ -91,6 +100,7 @@ export default {
         }
     },
     CollegePark: {
+        name: "College Park Station",
         directions: {
             north: [
                 "red",
@@ -103,6 +113,7 @@ export default {
         }
     },
     Decatur: {
+        name: "Decatur Station",
         directions: {
             east: [
                 "blue"
@@ -113,6 +124,7 @@ export default {
         }
     },
     Dome: {
+        name: "Omni Dome Station",
         directions: {
             east: [
                 "blue",
@@ -125,6 +137,7 @@ export default {
         }
     },
     Doraville: {
+        name: "Doraville Station",
         directions: {
             south: [
                 "gold"
@@ -132,6 +145,7 @@ export default {
         }
     },
     Dunwoody: {
+        name: "Dunwoody Station",
         directions: {
             north: [
                 "red"
@@ -142,6 +156,7 @@ export default {
         }
     },
     EastLake: {
+        name: "East Lake Station",
         directions: {
             east: [
                 "blue"
@@ -152,6 +167,7 @@ export default {
         }
     },
     EastPoint: {
+        name: "Airport Station",
         directions: {
             north: [
                 "red",

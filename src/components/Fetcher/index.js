@@ -8,6 +8,7 @@ const Fetcher = ({ action, children }) => {
 
   if (loading) return <Spinner />;
   if (error) return <Error error={error} />;
+  //@todo: create a fallback error page for no data
   if (!data) return null;
 
   return children(data);
