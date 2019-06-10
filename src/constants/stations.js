@@ -167,7 +167,7 @@ export default {
         }
     },
     EastPoint: {
-        name: "Airport Station",
+        name: "East Point Station",
         directions: {
             north: [
                 "red",
@@ -180,6 +180,7 @@ export default {
         }
     },
     Edgewood: {
+        name: "Edgewood Station",
         directions: {
             east: [
                 "blue",
@@ -192,6 +193,7 @@ export default {
         }
     },
     FivePoints: {
+        name: "Five Points Station",
         directions: {
             east: [
                 "blue",
@@ -212,6 +214,7 @@ export default {
         }
     },
     Garnett: {
+        name: "Garnett Station",
         directions: {
             north: [
                 "red",
@@ -224,6 +227,7 @@ export default {
         }
     },
     GeorgiaState: {
+        name: "Dunwoody Station",
         directions: {
             east: [
                 "blue",
@@ -236,6 +240,7 @@ export default {
         }
     },
     HEHolmes: {
+        name: "H.E. Holmes Station",
         directions: {
             east: [
                 "blue"
@@ -243,6 +248,7 @@ export default {
         }
     },
     IndianCreek: {
+        name: "Indian Creek Station",
         directions: {
             west: [
                 "blue"
@@ -250,6 +256,7 @@ export default {
         }
     },
     InmanPark: {
+        name: "Inman Park Station",
         directions: {
             east: [
                 "blue",
@@ -262,6 +269,7 @@ export default {
         }
     },
     Kensington: {
+        name: "Kensignton Station",
         directions: {
             east: [
                 "blue"
@@ -272,6 +280,7 @@ export default {
         }
     },
     KingMemorial: {
+        name: "King Memorial Station",
         directions: {
             east: [
                 "blue",
@@ -284,6 +293,7 @@ export default {
         }
     },
     Lakewood: {
+        name: "Lakewood Station",
         directions: {
             north: [
                 "red",
@@ -296,6 +306,7 @@ export default {
         }
     },
     Lenox: {
+        name: "Lenox Station",
         directions: {
             north: [
                 "gold"
@@ -306,6 +317,7 @@ export default {
         }
     },
     LindberghCenter: {
+        name: "Lindbergh Center Station",
         directions: {
             north: [
                 "red",
@@ -318,6 +330,7 @@ export default {
         }
     },
     MedicalCenter: {
+        name: "Medical Station",
         directions: {
             north: [
                 "red"
@@ -328,6 +341,7 @@ export default {
         }
     },
     Midtown: {
+        name: "Midtown Station",
         directions: {
             north: [
                 "red",
@@ -340,6 +354,7 @@ export default {
         }
     },
     NorthAvenue: {
+        name: "North Avenue Station",
         directions: {
             north: [
                 "red",
@@ -352,6 +367,7 @@ export default {
         }
     },
     NorthSprings: {
+        name: "North Springs Station",
         directions: {
             south: [
                 "red"
@@ -359,6 +375,7 @@ export default {
         }
     },
     OaklandCity: {
+        name: "Oakland City Station",
         directions: {
             north: [
                 "red",
@@ -371,6 +388,7 @@ export default {
         }
     },
     PeachtreeCenter: {
+        name: "Peachtree Station",
         directions: {
             north: [
                 "red",
@@ -383,6 +401,7 @@ export default {
         }
     },
     SandySprings: {
+        name: "Sandy Springs Station",
         directions: {
             north: [
                 "red"
@@ -393,6 +412,7 @@ export default {
         }
     },
     VineCity: {
+        name: "Vine City Station",
         directions: {
             east: [
                 "blue",
@@ -405,6 +425,7 @@ export default {
         }
     },
     WestEnd: {
+        name: "West End Station",
         directions: {
             north: [
                 "red",
@@ -417,6 +438,7 @@ export default {
         }
     },
     WestLake: {
+        name: "West Lake Station",
         directions: {
             east: [
                 "blue"

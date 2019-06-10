@@ -1,7 +1,7 @@
 import {getScheduleType} from "./utils";
 import Stations from './constants/stations';
 import Directions from './constants/directionKey'
-import {capitalizeFirstLetter} from "./utils/utils";
+import {capitalizeFirstLetter, flatten} from "./utils/utils";
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
@@ -96,6 +96,7 @@ const fetchArrivalsByStationAndDirection = (station, direction) => async () => {
         responsePromises.push(newArrivals)
     }
     const responses = await Promise.all(responsePromises);
+    let extractedData = [];
 
     let jsonData = responses.map((response) => {
 
@@ -103,20 +104,23 @@ const fetchArrivalsByStationAndDirection = (station, direction) => async () => {
             throw new Error(response.body, response.statusCode);
         }
 
-        return response.json();
+        const respJson = response.json();
+
+        respJson.then((arrivalList) => {
+            extractedData.push(arrivalList.filter((arrival) => {
+                return true;
+            }));
+        });
+
+        return respJson;
     });
 
-    let flattenedData = [];
-    jsonData.forEach((line) => {
-        console.log(line);
-        flattenedData.push(line.filter((arrival) => {
-            return arrival.station.name === Stations[station].name && arrival.station.direction === Directions[direction];
-        }));
-    });
-    flattenedData = flattenedData.flat();
-    console.log(flattenedData);
 
-    return jsonData;
+    let flattenedData = flatten(extractedData);
+    console.log('flat',flattenedData);
+    console.log('2d', extractedData);
+
+    return flattenedData;
 };
 
 export default {
