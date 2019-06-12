@@ -1,8 +1,7 @@
 import {getScheduleType} from "./utils";
 import Stations from './constants/stations';
 import {capitalizeFirstLetter} from "./utils/utils";
-
-const BASE_URL = process.env.REACT_APP_BASE_URL;
+import { BASE_URL } from './env';
 
 const fetchScheduleByStationAndDay = (station, day) => async () => {
     
@@ -17,7 +16,7 @@ const fetchScheduleByStationAndDay = (station, day) => async () => {
 
 const fetchArrivalsByLineAndStation = (line, station) => async () => {
     console.log(line, station, 'second')
-    const response = await fetch(`http://smarta-api.herokuapp.com/api/live/schedule/line?line=${line}`, {mode: 'cors'});
+    const response = await fetch(`${BASE_URL}/api/live/schedule/line?line=${line}`, {mode: 'cors'});
     let jsonData = response.json();
     const ArrivalPromise = new Promise((resolve, reject) => {
         if (!response.ok) {
@@ -94,7 +93,7 @@ const fetchArrivalsByStationAndDirection = (station, direction) => async () => {
     const lines = Stations[station].directions[direction];
     let response = {};
     for(const line of lines) {
-        const newArrivals = await fetch(`http://smarta-api.herokuapp.com/api/live/schedule/line/${capitalizeFirstLetter(line)}`, {mode: 'no-cors'});
+        const newArrivals = await fetch(`${BASE_URL}/api/live/schedule/line/${capitalizeFirstLetter(line)}`, {mode: 'no-cors'});
         response = {...response, ...newArrivals }
     }
     if (Object.entries(response).length === 0) {
