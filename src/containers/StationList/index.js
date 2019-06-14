@@ -39,7 +39,7 @@ const DistanceContainer = styled.div`
 `;
 
 const DistanceIcon = styled.img`
-    height: 35px;
+    height: 5vh;
 `;
 
 const StationList = (props) => {
@@ -62,7 +62,7 @@ const StationList = (props) => {
                                     {name.replace(/Station/gi, '')}
                                 </ListItemName>
                                 <DistanceContainer>
-                                <DistanceIcon src={LocationIcon} />
+                                    <DistanceIcon src={LocationIcon} />
                                     {distance} mi
                                 </DistanceContainer>
                             </ListItem>
